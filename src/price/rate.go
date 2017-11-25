@@ -17,7 +17,7 @@ type Instruments_rate struct {
 	Maxtradeunits int    `json:"maxTradeUnits"`
 }
 
-func Get_current_rate(extra_vars) []byte {
+func Get_current_rate(extra_vars Extra_vars) []byte {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", extra_vars.End_point+"/v1/instruments?accountId=8307075&instruments=USD_JPY", nil)
 	if err != nil {
