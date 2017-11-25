@@ -24,7 +24,7 @@ func Get_current_rate(End_point string, Token string) []byte {
 		log.Fatal(err)
 	}
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Set("Authorization", "Bearer"+Token)
+	req.Header.Set("Authorization", "Bearer "+Token)
 	res, err := client.Do(req)
 	if err != nil {
 		log.Fatal(err)
