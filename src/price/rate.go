@@ -17,14 +17,14 @@ type Instruments_rate struct {
 	Maxtradeunits int    `json:"maxTradeUnits"`
 }
 
-func Get_current_rate(extra_vars.End_point string, extra_vars.Token string) []byte {
+func Get_current_rate(End_point string, Token string) []byte {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", extra_vars.End_point+"/v1/instruments?accountId=8307075&instruments=USD_JPY", nil)
+	req, err := http.NewRequest("GET", End_point+"/v1/instruments?accountId=8307075&instruments=USD_JPY", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-	req.Header.Set("Authorization", "Bearer"+extra_vars.Token)
+	req.Header.Set("Authorization", "Bearer"+Token)
 	res, err := client.Do(req)
 	if err != nil {
 		log.Fatal(err)
