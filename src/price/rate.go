@@ -8,7 +8,7 @@ import (
 )
 
 // instruments USD_JPY
-type Get_rate struct {
+type Show_rate struct {
 	Instruments []Instruments_rate `json:"instruments"`
 }
 type Instruments_rate struct {
@@ -20,7 +20,7 @@ type Instruments_rate struct {
 
 // Instrument End
 // get_price
-type Get_price struct {
+type Show_price struct {
 	Prices []Prices_rate `json:"prices"`
 }
 type Prices_rate struct {
@@ -32,7 +32,7 @@ type Prices_rate struct {
 
 // get_price end
 // get_candles
-type Get_candles struct {
+type Show_candles struct {
 	Instument   string         `json:"instrument"`
 	Granularity string         `json:"granularity"`
 	Candles     []Candles_rate `json:"candles"`
@@ -50,7 +50,7 @@ type Candles_rate struct {
 	Complete bool    `json:"complete"`
 }
 
-func Get_current_rate(End_point string, Token string) []byte {
+func Show_current_rate(End_point string, Token string) []byte {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", End_point+"/v1/prices?accountId=8307075&instruments=USD_JPY", nil)
 	if err != nil {
@@ -72,7 +72,7 @@ func Get_current_rate(End_point string, Token string) []byte {
 
 }
 
-func Get_history_rate(End_point string, Token string) []byte {
+func Show_history_rate(End_point string, Token string) []byte {
 	//var
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", End_point+"/v1/candles?accountId=8307075&instrument=USD_JPY&granularity=H4&count=2", nil)
