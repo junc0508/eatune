@@ -4,7 +4,7 @@ import (
 	"github.com/junc0508/eatune/src/price"
 )
 
-func Calculate_history_data(price.Show_candles) {
+func Calculate_history_data(history price.Show_candles) (bool, bool) {
 	var judg bool
 	var judg_act bool
 	if history.Candles[1].Volume > 5000 {
