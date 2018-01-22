@@ -5,7 +5,7 @@ import (
 )
 
 const (
-	th_vol  = 500
+	th_vol  = 50
 	ind     = 1
 	th_diff = 0
 )
