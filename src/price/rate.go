@@ -19,7 +19,7 @@ type Instruments_rate struct {
 
 func Get_current_rate(End_point string, Token string) []byte {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", End_point+"/v1/prices?instruments=USD_JPY", nil)
+	req, err := http.NewRequest("GET", End_point+"/v1/prices?accountId=8307075&instruments=USD_JPY", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
