@@ -38,16 +38,16 @@ type Get_candles struct {
 	Candles     []Candles_rate `json:"candles"`
 }
 type Candles_rate struct {
-	Time     string `json:"time"`
-	Openbid  int    `json:"openBid"`
-	Openask  int    `json:"openAsk"`
-	Highbid  int    `json:"highBid"`
-	Highask  int    `json:"highAsk"`
-	LowBid   int    `json:"lowbid"`
-	Closebid int    `json:"closeBid"`
-	Closeask int    `json:"closeAsk"`
-	Volume   int    `json:"volume"`
-	Complete bool   `json:"complete"`
+	Time     string  `json:"time"`
+	Openbid  float32 `json:"openBid"`
+	Openask  float32 `json:"openAsk"`
+	Highbid  float32 `json:"highBid"`
+	Highask  float32 `json:"highAsk"`
+	LowBid   float32 `json:"lowbid"`
+	Closebid float32 `json:"closeBid"`
+	Closeask float32 `json:"closeAsk"`
+	Volume   int     `json:"volume"`
+	Complete bool    `json:"complete"`
 }
 
 func Get_current_rate(End_point string, Token string) []byte {
