@@ -23,7 +23,7 @@ type Instruments_rate struct {
 type Get_price struct {
 	Prices []Prices_rate `json:"prices"`
 }
-type Prices struct {
+type Prices_rate struct {
 	Instrument string `json:"instrument"`
 	Time       string `json:"time"`
 	Bid        int    `json:"bid"`
