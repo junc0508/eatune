@@ -1,5 +1,9 @@
 package compute
 
+import (
+	"github.com/junc0508/eatune/src/price"
+)
+
 func Calculate_history_data(price.Show_candles) {
 	var judg bool
 	var judg_act bool
