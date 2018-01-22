@@ -75,7 +75,7 @@ func Get_current_rate(End_point string, Token string) []byte {
 func Get_history_rate(End_point string, Token string) []byte {
 	//var
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", End_point+"/v1/candles?accountId=8307075&instrument=USD_JPY&granuarity=H4&count=2", nil)
+	req, err := http.NewRequest("GET", End_point+"/v1/candles?accountId=8307075&instrument=USD_JPY&granularity=H4&count=2", nil)
 
 	if err != nil {
 		log.Fatal(err)
