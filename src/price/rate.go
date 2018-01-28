@@ -39,13 +39,13 @@ type Show_candles struct {
 }
 type Candles_rate struct {
 	Time     string  `json:"time"`
-	Openbid  float32 `json:"openBid"`
-	Openask  float32 `json:"openAsk"`
-	Highbid  float32 `json:"highBid"`
-	Highask  float32 `json:"highAsk"`
-	LowBid   float32 `json:"lowbid"`
-	Closebid float32 `json:"closeBid"`
-	Closeask float32 `json:"closeAsk"`
+	Openbid  float64 `json:"openBid"`
+	Openask  float64 `json:"openAsk"`
+	Highbid  float64 `json:"highBid"`
+	Highask  float64 `json:"highAsk"`
+	LowBid   float64 `json:"lowbid"`
+	Closebid float64 `json:"closeBid"`
+	Closeask float64 `json:"closeAsk"`
 	Volume   int     `json:"volume"`
 	Complete bool    `json:"complete"`
 }
