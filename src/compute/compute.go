@@ -30,7 +30,7 @@ func Calculate_RCI(history price.Show_candles) []int {
 	//tmp := 5 * 4
 	resAr := []int{}
 	for i := 0; i < len(history.Candles); i++ {
-		sort.Sort(history.Candles[i].Closeask))
+		sort.Sort(history.Candles[i].Closeask)
 		resAr = append(resAr, history.Candles[i].Closeask[0])
 	}
 	return resAr
