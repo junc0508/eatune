@@ -49,7 +49,7 @@ func Calculate_RCI(history price.Show_candles) float64 {
 	tmp_p = (1 - (6*tmp_p)/(5*24)) * 100
 
 	for i := 1; i < len(history.Candles); i++ {
-		fset_c = append(fset, history.Candles[i].Closeask)
+		fset_c = append(fset_c, history.Candles[i].Closeask)
 	}
 	//fmt.Print(fset)
 	sort.Float64s(fset_c)
