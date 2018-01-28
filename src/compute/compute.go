@@ -2,6 +2,7 @@ package compute
 
 import (
 	"github.com/junc0508/eatune/src/price"
+	"sort"
 )
 
 const (
@@ -22,5 +23,16 @@ func Calculate_history_data(history price.Show_candles) (bool, bool) {
 		judg = true
 	}
 	return judg, judg_act
+
+}
+
+func Calculate_RCI(history price.Show_candles) []int {
+	//tmp := 5 * 4
+	resAr := []int{}
+	for i := 0; i < len(history.Candles); i++ {
+		sort.Sort(retLargest(history.Candles[i].Closeask))
+		resAr = append(resAr, history.Candles[i].Closeask[0])
+	}
+	return resAr
 
 }
