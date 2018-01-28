@@ -46,7 +46,7 @@ func Calculate_RCI(history price.Show_candles) float64 {
 		}
 	}
 	fmt.Print("\n", tmp)
-	tmp = (1 - 6*tmp/20) * 100
+	tmp = (1 - (6*tmp)/(5*24)) * 100
 	return tmp
 
 }
