@@ -27,7 +27,7 @@ func Calculate_history_data(history price.Show_candles) (bool, bool) {
 
 }
 
-func Calculate_RCI(history price.Show_candles) []float64 {
+func Calculate_RCI(history price.Show_candles) float64 {
 	//tmp := 5 * 4
 	//resAr := []int{}
 	var tmp int
@@ -46,6 +46,7 @@ func Calculate_RCI(history price.Show_candles) []float64 {
 		}
 	}
 	fmt.Print("\n", tmp)
-	return fset
+tmp = (1 - 6*tmp/20))*100
+	return tmp
 
 }
