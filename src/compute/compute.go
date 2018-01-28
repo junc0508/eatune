@@ -30,7 +30,7 @@ func Calculate_history_data(history price.Show_candles) (bool, bool) {
 func Calculate_RCI(history price.Show_candles) float64 {
 	//tmp := 5 * 4
 	//resAr := []int{}
-	var tmp int
+	var tmp float64
 	fset := []float64{}
 	for i := 0; i < len(history.Candles); i++ {
 		fset = append(fset, history.Candles[i].Closeask)
@@ -41,7 +41,7 @@ func Calculate_RCI(history price.Show_candles) float64 {
 		for j := 0; j < len(history.Candles); j++ {
 			fset = append(fset, history.Candles[i].Closeask)
 			if history.Candles[i].Closeask == fset[j] {
-				tmp = tmp + (i-j)*(i-j)
+				tmp = tmp + float64((i-j)*(i-j))
 			}
 		}
 	}
