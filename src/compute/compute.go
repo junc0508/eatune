@@ -33,7 +33,7 @@ func Calculate_RCI(history price.Show_candles) []int {
 	fset := []float64{}
 	for i := 0; i < len(history.Candles); i++ {
 		//fset := []float64{0.055, 0.815, 1.0, 0.107}
-		fset = append(float64(history.Candles[i].Closeask))
+		fset = append(float64(fset, history.Candles[i].Closeask))
 		//fmt.Print(sort.Float64s(history.Candles.Closeask))
 		//resAr = append(resAr, history.Candles[i].Closeask[0])
 	}
