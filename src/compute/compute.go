@@ -3,7 +3,7 @@ package compute
 import (
 	"fmt"
 	"github.com/junc0508/eatune/src/price"
-	//"sort"
+	"sort"
 )
 
 const (
@@ -32,12 +32,10 @@ func Calculate_RCI(history price.Show_candles) []float64 {
 	//resAr := []int{}
 	fset := []float64{}
 	for i := 0; i < len(history.Candles); i++ {
-		//fset := []float64{0.055, 0.815, 1.0, 0.107}
 		fset = append(fset, history.Candles[i].Closeask)
-		//fmt.Print(sort.Float64s(history.Candles.Closeask))
-		//resAr = append(resAr, history.Candles[i].Closeask[0])
 	}
 	fmt.Print(fset)
+	fmt.Print(sort.Float64s(fset))
 	return fset
 
 }
