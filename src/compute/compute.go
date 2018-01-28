@@ -45,7 +45,7 @@ func Calculate_RCI(history price.Show_candles) []float64 {
 			}
 		}
 	}
-	fmt.Print(tmp)
+	fmt.Print("\n", tmp)
 	return fset
 
 }
