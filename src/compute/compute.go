@@ -30,23 +30,40 @@ func Calculate_history_data(history price.Show_candles) (bool, bool) {
 func Calculate_RCI(history price.Show_candles) float64 {
 	//tmp := 5 * 4
 	//resAr := []int{}
-	var tmp float64
+	var tmp_p, tmp_c, tmp float64
 	fset := []float64{}
-	for i := 0; i < len(history.Candles); i++ {
+	for i := 0; i < len(history.Candles)-1; i++ {
 		fset = append(fset, history.Candles[i].Closeask)
 	}
 	//fmt.Print(fset)
 	sort.Float64s(fset)
-	for i := 0; i < len(history.Candles); i++ {
-		for j := 0; j < len(history.Candles); j++ {
+	for i := 0; i < len(history.Candles)-1; i++ {
+		for j := 0; j < len(history.Candles)-1; j++ {
 			fset = append(fset, history.Candles[i].Closeask)
 			if history.Candles[i].Closeask == fset[j] {
-				tmp = tmp + float64((i-j)*(i-j))
+				tmp_p = tmp_p + float64((i-j)*(i-j))
+			}
+		}
+	}
+	tmp_p = (1 - (6*tmp_p)/(5*24)) * 100
+
+	for i := 1; i < len(history.Candles); i++ {
+		fset = append(fset, history.Candles[i].Closeask)
+	}
+	//fmt.Print(fset)
+	sort.Float64s(fset)
+	for i := 1; i < len(history.Candles); i++ {
+		for j := 1; j < len(history.Candles); j++ {
+			fset = append(fset, history.Candles[i].Closeask)
+			if history.Candles[i].Closeask == fset[j] {
+				tmp_c = tmp_c + float64((i-j)*(i-j))
 			}
 		}
 	}
 	//fmt.Print("\n", tmp)
-	tmp = (1 - (6*tmp)/(5*24)) * 100
+	tmp_c = (1 - (6*tmp_c)/(5*24)) * 100
+
+	tmp = tmp_c - tmp_p
 	return tmp
 
 }
