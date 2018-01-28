@@ -1,7 +1,7 @@
 package compute
 
 import (
-	//"fmt"
+	"fmt"
 	"github.com/junc0508/eatune/src/price"
 	"sort"
 )
@@ -64,6 +64,7 @@ func Calculate_RCI(history price.Show_candles) float64 {
 	tmp_c = (1 - (6*tmp_c)/(5*24)) * 100
 
 	tmp = tmp_c - tmp_p
+	fmt.Println(tmp_p, tmp_c, tmp)
 	return tmp
 
 }
