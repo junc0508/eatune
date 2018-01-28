@@ -27,17 +27,17 @@ func Calculate_history_data(history price.Show_candles) (bool, bool) {
 
 }
 
-func Calculate_RCI(history price.Show_candles) []int {
+func Calculate_RCI(history price.Show_candles) []float64 {
 	//tmp := 5 * 4
 	//resAr := []int{}
 	fset := []float64{}
 	for i := 0; i < len(history.Candles); i++ {
 		//fset := []float64{0.055, 0.815, 1.0, 0.107}
-		fset = append(float64(fset, history.Candles[i].Closeask))
+		fset = append(fset, history.Candles[i].Closeask)
 		//fmt.Print(sort.Float64s(history.Candles.Closeask))
 		//resAr = append(resAr, history.Candles[i].Closeask[0])
 	}
 	fmt.Print(fset)
-	return resAr
+	return fset
 
 }
