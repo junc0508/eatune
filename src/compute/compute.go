@@ -32,6 +32,7 @@ func Calculate_RCI(history price.Show_candles) float64 {
 	//resAr := []int{}
 	var tmp_p, tmp_c, tmp float64
 	fset := []float64{}
+	fset_c := []float64{}
 	for i := 0; i < len(history.Candles)-1; i++ {
 		fset = append(fset, history.Candles[i].Closeask)
 	}
@@ -48,14 +49,14 @@ func Calculate_RCI(history price.Show_candles) float64 {
 	tmp_p = (1 - (6*tmp_p)/(5*24)) * 100
 
 	for i := 1; i < len(history.Candles); i++ {
-		fset = append(fset, history.Candles[i].Closeask)
+		fset_c = append(fset, history.Candles[i].Closeask)
 	}
 	//fmt.Print(fset)
-	sort.Float64s(fset)
+	sort.Float64s(fset_c)
 	for i := 1; i < len(history.Candles); i++ {
 		for j := 1; j < len(history.Candles); j++ {
-			fset = append(fset, history.Candles[i].Closeask)
-			if history.Candles[i].Closeask == fset[j] {
+			fset = append(fset_c, history.Candles[i].Closeask)
+			if history.Candles[i].Closeask == fset_c[j] {
 				tmp_c = tmp_c + float64((i-j)*(i-j))
 			}
 		}
